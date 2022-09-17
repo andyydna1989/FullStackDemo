@@ -10,14 +10,11 @@ import {Animal} from "./animalModel";
 export class HeaderComponent implements AfterViewInit {
 
   constructor(private http: HttpClient) { }
-  animals=[""];
+  animals: string[] = [];
 
 
 
   ngAfterViewInit(): void {
-
-    this.animals.shift();
-
 
   this.http.get<{animals: [Animal]}> (
     "http://localhost:3000/animals"
